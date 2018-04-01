@@ -1,0 +1,60 @@
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnFVUu7dIM2swPMhoHueIdMNYXtmja6iS5kfUMjRjLIq1F88dr");
+}
+
+.row {
+    margin: 10px;
+}
+
+#number {
+    margin-right: 10px;
+}
+
+/* button {
+    margin: 10px;
+    height: 50px;
+} */
+
+img {
+    height: 100px;
+    width: 100px;
+}
+#title {
+    height: 100px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+
+#gameRules {
+    height: 300px;
+    background-color: beige;
+}
+
+p {
+    color: green;
+    font-weight: bold;
+}
+
+#number {
+    height: 100px;
+    background-color: lightgreen;
+}
+
+#scoreboard {
+    height: 100px;
+    background-color: turquoise;
+}
+
+#scoreHeader {
+    height: 50px;
+    background-color: steelblue;
+    color: white;
+}
+
+#scoreTotal {
+    height: 100px;
+    background-color: steelblue;
+    color: white;
+}
+
