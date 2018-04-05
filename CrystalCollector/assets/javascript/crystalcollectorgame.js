@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
     // Setting Variables
     var scoreboard = {
@@ -11,59 +11,128 @@ $(document).ready(function() {
         diamondValue: Math.floor(Math.random() * 12) + 1,
         citrineValue: Math.floor(Math.random() * 12) + 1,
         emeraldValue: Math.floor(Math.random() * 12) + 1,
-        userValue: 0
     };
-    var result;
     console.log(values);
     // Display for start of the game
     document.getElementById("wins").innerHTML = "Wins: " + scoreboard.win;
     document.getElementById("loss").innerHTML = "Losses: " + scoreboard.loss;
     document.getElementById("randomNumber").innerHTML = values.targetValue;
 
-    // var addValue =;
     // Adding values to the user's total
-    // while (values.targetValue >= values.userValue) {
-        // if (values.targetValue > values.userValue) {
-            if (values.targetValue > values.userValue) {
-            $("#ruby, #diamond, #citrine, #emerald").click(function() {
-                if(this.id == "ruby") {
-                    // $("#scoreTotal").text(values.rubyValue);
-                    console.log(values.rubyValue);
-                    result = values.rubyValue + values.userValue;
-                    console.log(result);
-                    
-                }
-                else if(this.id == "diamond") {
-                    // $("#scoreTotal").text(values.diamondValue);
-                    console.log(values.diamondValue);
-                    result = values.diamondValue + values.userValue;
-                    console.log(result);
-                }
-                else if(this.id == "citrine") {
-                    // $("#scoreTotal").text(values.citrineValue);
-                    console.log(values.citrineValue);
-                    result = values.citrineValue + values.userValue;
-                    console.log(result);
-                }
-                else if(this.id == "emerald") {
-                    // $("#scoreTotal").text(values.emeraldValue);
-                    console.log(values.emeraldValue);
-                    result = values.emeraldValue + values.userValue;
-                    console.log(result);
-                };
-            });
+    // while (values.targetValue >= userScore) {
+        // if (values.targetValue > userScore) {
+                
+    var userScore = 0;
+
+    $("#ruby, #diamond, #citrine, #emerald").click(function() {
+        //Click the ruby button and add it to the score 
+        if(this.id == "ruby") {
+            console.log(values.rubyValue);
+            userScore += values.rubyValue;
+            console.log(userScore);
+            // Alert win and ask to play again
+            // if (values.targetValue === userScore) {
+            //     alert("YOU WON!!!!");
+            //     var playAgainWin = confirm("Would you like to play again?");
+            // };
+            // // Alert loss and ask to play again
+            // if (values.targetValue < userScore) {
+            //     alert("You loss.");
+            //     var playAgainLoss = confirm("Would you like to play again?")
+            // };
+
+            // if (playAgainWin = true) {
+            //     $("#wins").text(scoreboard.win++);
+            // };
+
+            // if (playAgainLoss = true) {
+            //     $("#loss").text(scoreboard.loss++);
+            // };
         }
-    //     }
-    //     else if (values.targetValue === values.userValue) {
-    //         alter("YOU ARE A WINNER!!!!");
-    //         confirm("Would you like to play again?")
-    //     }
-    //     else if (values.targetValue > values.userValue) {
-    //         alter("You loss :( ");
-    //         confirm("Would you like to play again?")
-    //     }
-    //     else {
-    //         break;
-    //     };
-    // };
-});
+        // Click the diamond and add it to the score
+        else if(this.id == "diamond") {
+            console.log(values.diamondValue);
+            userScore += values.diamondValue;
+            console.log(userScore);
+            // // Alert win and ask to play again
+            // if (values.targetValue === userScore) {
+            //     alert("YOU WON!!!!");
+            //     var playAgainWin = confirm("Would you like to play again?");
+            // };
+            // // Alert loss and ask to play again
+            // if (values.targetValue < userScore) {
+            //     alert("You loss.");
+            //     var playAgainLoss = confirm("Would you like to play again?")
+            // };
+
+            // if (playAgainWin = true) {
+            //     $("#wins").text(scoreboard.win++);
+            // };
+
+            // if (playAgainLoss = true) {
+            //     $("#loss").text(scoreboard.loss++);
+            // };
+        }
+        // Click the citrine button and add it to the score
+        else if(this.id == "citrine") {
+            console.log(values.citrineValue);
+            userScore += values.citrineValue;
+            console.log(userScore);
+            // // Alert win and ask to play again
+            // if (values.targetValue === userScore) {
+            //     alert("YOU WON!!!!");
+            //     var playAgainWin = confirm("Would you like to play again?");
+            // };
+            // // Alert loss and ask to play again
+            // if (values.targetValue < userScore) {
+            //     alert("You loss.");
+            //     var playAgainLoss = confirm("Would you like to play again?")
+            // };
+
+            // if (playAgainWin = true) {
+            //     $("#wins").text(scoreboard.win++);
+            // };
+
+            // if (playAgainLoss = true) {
+            //     $("#loss").text(scoreboard.loss++);
+            // };
+        }
+        // Click the emerald button and add it to the score
+        else if(this.id == "emerald") {
+            console.log(values.emeraldValue);
+            userScore += values.emeraldValue;
+            console.log(userScore);
+            // // Alert win and ask to play again
+            // if (values.targetValue === userScore) {
+            //     alert("YOU WON!!!!");
+            //     var playAgainWin = confirm("Would you like to play again?");
+            // };
+            // // Alert loss and ask to play again
+            // if (values.targetValue < userScore) {
+            //     alert("You loss.");
+            //     var playAgainLoss = confirm("Would you like to play again?")
+            // };
+
+        };
+
+        $("#scoreTotal").text(userScore);
+
+        // Alert win and ask to play again
+        if (values.targetValue === userScore) {
+            alert("YOU WON!!!!");
+            var playAgainWin = confirm("Would you like to play again?");
+            // Incrementing wins
+            if (playAgainWin === true) {
+                $("#wins").text("Wins: " + scoreboard.win++);
+            };
+        };
+        // Alert loss and ask to play again
+        if (values.targetValue < userScore) {
+            alert("You loss.");
+            var playAgainLoss = confirm("Would you like to play again?")
+            // Incrementing losses
+            if (playAgainLoss === true) {
+                $("#loss").text("Losses: " + scoreboard.loss++);
+            };
+        };
+    });
